@@ -21,6 +21,20 @@ const songValidationRules = () => {
   ];
 };
 
+const artistValidationRules = () => {
+  return [
+    body('artistName').notEmpty().isString(),
+    body('language').isString()
+  ];
+};
+
+const favoriteValidationRules = () => {
+  return [
+    body('songTitle').notEmpty().isString(),
+    body('artist').notEmpty().isString()
+  ];
+};
+
 const validate = (req, res, next) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
@@ -37,5 +51,7 @@ const validate = (req, res, next) => {
 module.exports = {
   userValidationRules,
   songValidationRules,
+  artistValidationRules,
+  favoriteValidationRules,
   validate,
 }

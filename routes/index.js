@@ -5,6 +5,8 @@ const passport = require('passport');
 router.use('/', require('./swagger'));
 router.use('/users', require('./users'));
 router.use('/songs', require('./songs'));
+router.use('/artists', require('./artists'));
+router.use('/favorites', require('./favorites'));
 
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 
