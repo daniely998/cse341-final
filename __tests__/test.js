@@ -30,7 +30,7 @@ describe('Get routes test', () => {
     const res = await request(app).get('/users');
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
-    expect(res.body[1].birthday).toBe('2-6-1997');
+    expect(res.body[1].birthday).toBe('10-18-1992');
   });
 
   test('Users GetSingle, first name', async() => {
